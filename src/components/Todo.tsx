@@ -29,8 +29,8 @@ const Todo = () => {
 
   return (
   <>
-    {user}
     <div className="container mt-5">
+    <p>User: {user}</p>
       <h1 className="mb-4">Todo List</h1>
       <button className="btn btn-primary mb-3" onClick={addTodo}>
         Add Todo

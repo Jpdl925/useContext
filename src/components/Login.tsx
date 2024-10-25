@@ -19,7 +19,6 @@ const {user,dispatch} = useContext(LoginContext);
 
   return (
     <div className="container d-flex justify-content-end navColor">
-      <h1 className="mb-4">User Authentication</h1>
       {user ? (
           <div>
             <h2>It is I, { user}!</h2>
