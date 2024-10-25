@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+// Julius Ponce De Leon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+// Date Revised: 10/24/24
 
-Currently, two official plugins are available:
+// Mini Challenge 17: UseContext Practice Login
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+// Requirements: 
+Now you will practice crating  a context to share the current user with any component in the current tree.
 
-## Expanding the ESLint configuration
+Move the Login component to your nav bar
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+When you click login you will display the name in the nav bar and display the name in the Todo component.
 
-- Configure the top-level `parserOptions` property like this:
+hint: follow the following steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+summary: To Share state with UseContext.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Lift the state up to the closest parent
+Create a Context (like a moving truck transporting data)
+Wrap our component tree with using a provider component(we can share anything) we want to share state
+Once we do this we can access the share state using UseContext in the component we want to access the state.
