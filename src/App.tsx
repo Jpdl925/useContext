@@ -5,23 +5,22 @@ import todoReducer from "./reducers/TodoReducer";
 import TodoContext from "./contexts/todoContext";
 import authReducer from "./reducers/authReducer";
 import LoginContext from "./contexts/loginContext";
+import AuthProvider from "./AuthProvider";
+import TodoProvider from "./TodoProvider";
 
 const App = () => {
-  const [todos, tododispatch] = useReducer(todoReducer, []);
-  const [user, userdispatch] = useReducer(authReducer, "");
 
   return (
     <>
       {/* <Counter/> */}
       {/* <Todo/> */}
       {/* <Login/> */}
-
-      <TodoContext.Provider value={{ todos, dispatch: tododispatch }}>
-        <LoginContext.Provider value={{ user, dispatch: userdispatch }}>
+      <AuthProvider>
+      <TodoProvider>
           <MyNavbar />
           <HomePage />
-        </LoginContext.Provider>
-      </TodoContext.Provider>
+      </TodoProvider>
+      </AuthProvider>
     </>
   );
 };
